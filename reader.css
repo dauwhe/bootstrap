@@ -1,0 +1,42 @@
+	body {
+		background-color: #efeaf4 !important;
+		}
+		
+			main iframe {
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+			}
+			iframe { display: none; border: none; background-color: #fff;}
+			
+			iframe:target { display: block; }
+			
+			/* layout */
+			
+			nav {
+			z-index: 0;
+			display: none;
+			position: fixed;
+			top: 50px;
+			width: 200px;
+			padding-right: 10px;
+			height: 100%;
+			overflow: scroll;
+			background-color: #efeaf4;
+			border-top-left-radius: 75px;
+			border-top-right-radius: 75px;
+			}
+			
+			nav ol {
+			list-style-type: none;
+			}
+			main {
+
+			top: 30px;
+			left: 30px;
+			right: 30px;
+			 position: absolute;
+			 z-index: -1;
+			 height: 200%;
+			 overflow: scroll;
+			}

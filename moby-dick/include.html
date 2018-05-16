@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           
+   
+   class include extends HTMLElement {
+                connectedCallback() {
+                    fetch(this.getAttribute('src'), {mode: 'cors', credentials: 'same-origin'})
+                        .then(response => response.text())
+                        .then(text => this.outerHTML = text)
+                        .catch(err => console.warn(err));
+                }
+            }
+
+            customElements.define('include-html', include);
+   
+   
+        </script>
+        
+        
+        
+        
+        
+    </head>
+    <body>
+        <!-- Include the partial HTML. -->
+        <!-- If the included HTML has includes, they will be included too. -->
+        <include-html id="test" src="c001.html"></include-html>
+    
+        
+        <include-html id="test2" src="c002.html"></include-html>
+
+        <!-- No problems here either. It just logs an error if this happens. -->
+        <!-- script>document.getElementById('test').remove()</script -->
+    </body>
+</html>
